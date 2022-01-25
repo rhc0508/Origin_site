@@ -1,0 +1,180 @@
+@charset "utf-8";
+*{box-sizing:border-box; font-family: 'Nanum Gothic', sans-serif;}
+html, body{margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6, p{margin: 0;}
+ul, ol{margin: 0; padding: 0; list-style: none;}
+a, a:hover{text-decoration: none;}
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+/* 1200px 이상 */
+header{
+    position: fixed;
+    top: 0; left: 0;
+    width: 280px; height: 100%;
+    background-color: #6ab3b2;
+    box-shadow: inset 1px 1px 10px rgba(0,0,0,0.8);
+}
+
+/* 로고 */
+header .logo{
+    height: 220px; 
+    display: flex; 
+    justify-content: center; align-items: center;
+}
+header .logo a{}
+header .logo a img{
+    display: block;
+    height: 55px;
+}
+
+/* 메뉴 */
+header #menu{}
+header #menu ul{}
+header #menu ul li{
+    text-align: center;
+    border-bottom: 1px solid #fff;
+}
+header #menu ul li a{
+    display: block;
+    font-size: 18px; 
+    text-transform: uppercase;
+    color: #feffff;
+    line-height: 60px;
+}
+
+header #menu ul li:hover a{
+    color: #6ab3b2;
+    background: #fff;
+}
+
+header #menu .sns_1{
+    display: none;
+}
+
+/* sns */
+header #sns{
+    position: absolute; 
+    bottom: 20px; left: 50%;
+    transform: translateX(-50%);
+}
+header #sns h3{
+    font-size: 18px; font-weight: 400;
+    text-transform: uppercase;
+    color: #feffff;
+    text-align: center;
+    padding-bottom: 10px;
+}
+header #sns .icon{
+    display: flex; 
+    flex-wrap: wrap;
+}
+header #sns .icon > div{
+    margin: 0 5px;
+}
+header #sns .icon > div a{}
+header #sns .icon > div a img{
+    display: block; 
+    height: 25px; width: 25px;
+}
+
+/* 섹션 */
+section{
+    width: calc(100% / 280px);
+    height: 1100px;
+    margin-left: 280px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+section article{
+    width: auto; height: auto;
+    background-size: cover; 
+    background-position: 50% 50%;
+    overflow: hidden;
+}
+section article:nth-child(1){grid-column: 1/3; grid-row: 1/3;}
+section article:nth-child(2){grid-column: 3/4; grid-row: 1/2;}
+section article:nth-child(3){grid-column: 4/5; grid-row: 1/2;}
+section article:nth-child(4){grid-column: 3/4; grid-row: 2/3;}
+section article:nth-child(5){grid-column: 4/5; grid-row: 2/3;}
+section article:nth-child(6){grid-column: 1/2; grid-row: 3/4;}
+section article:nth-child(7){grid-column: 2/4; grid-row: 3/4;}
+section article:nth-child(8){grid-column: 4/5; grid-row: 3/4;}
+section article:nth-child(9){grid-column: 1/2; grid-row: 4/5;}
+section article:nth-child(10){grid-column: 2/3; grid-row: 4/5;}
+section article:nth-child(11){grid-column: 3/5; grid-row: 4/5;}
+section article:nth-child(12){grid-column: 1/3; grid-row: 5/6;}
+section article:nth-child(13){grid-column: 3/4; grid-row: 5/6;}
+section article:nth-child(14){grid-column: 4/5; grid-row: 5/6;}
+
+section article .cover{
+    width: 100%; height: 100%;
+    background-color: rgba(255, 170, 0, 0.8);
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    transform: translateY(110%);
+    transition: transform 0.5s;
+}
+
+section article:hover .cover{
+    transform: translateY(0%);
+}
+
+section article .cover .cont{
+    color: #fff;
+    text-align: center;
+}
+section article .cover .cont h3.tit{
+    font-size: 24px; font-weight: 800;
+    margin-bottom: 10px;
+}
+section article .cover .cont h4.date{
+    font-size: 18px; font-weight: 400;
+}
+
+section article .cover .cont .bar{
+    width: 102px; height: 4px;
+    background-color: #fff;
+    margin: 10px auto;
+}
+
+section article .cover .cont p{
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+section article .cover .cont .icon{
+    width: 40px; height: 40px; 
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    cursor: pointer;
+}
+section article .cover .cont .icon a{}
+section article .cover .cont .icon a img{
+    display: block;
+    height: 24px;
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+section article:nth-child(1) .cover .cont .bar{
+    margin: 20px auto;
+}
+
+section article:nth-child(7) .cover,
+section article:nth-child(11) .cover,
+section article:nth-child(12) .cover{
+    justify-content: flex-start;
+}
+section article:nth-child(7) .cover .cont, 
+section article:nth-child(11) .cover .cont, 
+section article:nth-child(12) .cover .cont{
+    width: 50%;
+}
+
+footer{display: none;}
