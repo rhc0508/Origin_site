@@ -165,6 +165,9 @@
         justify-content: center;
         align-items: center;
     }
+    
+    header .downArrow{display: block;}
+    
 
     /* sns */
     header #menu .sns_2{
